@@ -35,6 +35,9 @@ function homePage() {
     document.getElementById("allContent").appendChild(paragraph);
 }
 
+/**
+ * 
+ */
 function playersPage() {
     clearContentElement();
     hideForms();
