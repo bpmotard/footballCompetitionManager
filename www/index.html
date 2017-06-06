@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Football Competition Manager</title>
+    <link rel="icon" type="image/png" href="images\code-break.png">
+    <link rel="stylesheet" type="text/css" href="/styles/resetall.css">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script type="text/javascript" src="/scripts/auxScripts.js"></script>
+    <script type="text/javascript" src="/scripts/competition.js"></script>
+    <script type="text/javascript" src="/scripts/cup.js"></script>
+    <script type="text/javascript" src="/scripts/game.js"></script>
+    <script type="text/javascript" src="/scripts/league.js"></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
+    <script type="text/javascript" src="/scripts/player.js"></script>
+    <script type="text/javascript" src="/scripts/table.js"></script>
+    <script type="text/javascript" src="/scripts/team.js"></script>
+</head>
+
+<body onload="startScripts();">
+    <nav>
+        <ul>
+            <a href="javascript:homePage();"><img id="logotipo" src="/images/logotipo.png" /></a>
+            <li> <a href="javascript:homePage();">HOME</a></li>
+            <li> <a href="javascript:playersPage();">PLAYERS</a></li>
+            <li> <a href="javascript:teamsPage();">TEAMS</a></li>
+            <li> <a href="#">COMPETITION</a>
+                <ul>
+                    <li><a href="javascript:cupsPage();">CUP</a></li>
+                    <li><a href="javascript:leaguesPage();">LEAGUE</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="allContent">
+    </div>
+
+    <!--******************************************************************************************
+        Bloco reservado aos formulários para Adicionar, Remover e Atualizar das diversas entidades 
+    ********************************************************************************************-->
+
+    <!-- Player -->
+    <div id="divFormPlayer" style="display: none">
+
+        <h2>Add a new player: </h2> <br>
+
+        <form action="javascript: formAddPlayerAction()">
+            <label for="inputPlayerName">Name:</label> <br>
+            <input id="inputPlayerName" type="text" name="name">
+            <br> <br>
+            <label for="inputPlayerAge">Age:</label> <br>
+            <input id="inputPlayerAge" type="text" name="age">
+            <br> <br>
+            <label for="inputPlayerCountry">Country:</label> <br>
+            <select id="inputPlayerCountry">
+                <option value="Argentina">Argentina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="England">England</option>
+                <option value="France">France</option>                
+                <option value="Germany">Germany</option>
+                <option value="Italy">Italy</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Spain">Spain</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Uruguay">Uruguay</option>
+            </select>
+            
+            <br> <br>
+            <label for="inputPlayerHeight">Height:</label><br>
+            <input id="inputPlayerHeight" type="text" name="height">
+            <br> <br> 
+            <label for="inputPlayerPosition">Position:</label> <br> 
+            <select id="inputPlayerPosition">
+                <option value="GK">GoalKeeper</option>
+                <option value="DF">Defender</option>
+                <option value="MF">MidFielder</option>
+                <option value="ST">Striker</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Add player">
+        </form> 
+
+    </div>
+
+    <div id="divFormUpdatePlayer" style="display: none">
+
+        <h2>Update the player: </h2> <br>
+
+        <form action="javascript: formUpdatePlayerAction()">
+            <label for="inputUpdatePlayerName">Name:</label> <br> 
+            <input id="inputUpdatePlayerName" type="text" name="name">
+            <br> <br>
+            <label for="inputUpdatePlayerAge">Age:</label> <br>
+            <input id="inputUpdatePlayerAge" type="text" name="age">
+            <br> <br>
+            <label for="inputUpdatePlayerCountry">Country:</label> <br>
+            <select id="inputUpdatePlayerCountry">
+                <option value="Argentina">Argentina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="England">England</option>
+                <option value="France">France</option>                
+                <option value="Germany">Germany</option>
+                <option value="Italy">Italy</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Spain">Spain</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Uruguay">Uruguay</option>
+            </select>
+            
+            <br> <br>
+            <label for="inputUpdatePlayerHeight">Height:</label> <br>
+            <input id="inputUpdatePlayerHeight" type="text" name="height">
+            <br> <br>
+            <label for="inputUpdatePlayerPosition">Position:</label> <br>
+            <select id="inputUpdatePlayerPosition">
+                <option value="GR">GoalKeeper</option>
+                <option value="DF">Defender</option>
+                <option value="MC">MidFielder</option>
+                <option value="AV">Striker</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Update player">
+        </form> 
+
+    </div>
+
+
+    <!-- Team -->
+    <div id="divFormTeam" style="display: none">
+
+        <h2>Add a new team: </h2> <br>
+
+        <form action="javascript: formAddTeamAction()">
+            <label for="inputTeamName">Name:</label> <br>
+            <input id="inputTeamName" type="text" name="name">
+            <br> <br>
+            <label for="inputTeamAcronym">Acronym:</label> <br>
+            <input id="inputTeamAcronym" type="text" name="acronym">
+            <br> <br>
+            <label for="inputTeamCountry">Country:</label> <br>
+            <select id="inputTeamCountry">
+                <option value="Argentina">Argentina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="England">England</option>
+                <option value="France">France</option>                
+                <option value="Germany">Germany</option>
+                <option value="Italy">Italy</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Spain">Spain</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Uruguay">Uruguay</option>
+            </select>
+            
+            <br> <br>
+            <label for="inpuTeamtUrl">URL:</label> <br>
+            <input id="inputTeamUrl" type="text" name="url">
+            <br> <br>
+            <label for="inputTeamDescription">Description:</label> <br>
+            <input id="inputTeamDescription" type="text" name="description">            
+            <br><br>
+            <input type="submit" value="Add team">
+        </form> 
+    </div>
+
+     <!-- League -->
+    <div id="divFormLeague" style="display: none">
+
+        <h2>Add a new league: </h2> <br>
+
+        <form action="javascript: formAddLeagueAction()">
+            <label for="inputLeagueName">Name:</label> <br>
+            <input id="inputLeagueName" type="text" name="name">
+            <br> <br>
+            <label for="inputLeagueEdition">Edition:</label><br>
+            <input id="inputLeagueEdition" type="text" name="edition">          
+            <br><br>
+            <input type="submit" value="Add league">
+        </form> 
+    </div>
+
+    <footer>&copy; 2016/2017 - Licenciatura em Engenharia Informática: Programação para a Internet</footer>
+</body>
+
+</html>
