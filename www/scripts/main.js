@@ -17,6 +17,9 @@ var allCupList = [];
 
 /* Funções para alterar a div entre os vários separadores */
 
+/**
+ * Atualiza a div
+ */
 function homePage() {
     clearContentElement();
     hideForms();
